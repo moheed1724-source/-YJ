@@ -1,0 +1,15 @@
+adviceText
+budget
+chanceBadge
+countryIcon
+eduLevel
+gpa
+langScore
+major
+recommendedCountry
+resultModal
+scoreCircle
+scoreText
+targetCountry
+universityList
+wechatModal
