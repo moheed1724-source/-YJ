@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欧研 AI 留学规划师 | 您的欧洲留学指南</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.1), transparent),
+                        radial-gradient(circle at bottom left, rgba(124, 58, 237, 0.1), transparent);
+        }
+
+        .timeline-dot::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background: #e2e8f0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+
+        .timeline-item:last-child .timeline-dot::after {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+<body class="hero-gradient">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-card border-b border-slate-200/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <div class="bg-blue-600 p-1.5 rounded-lg">
+                        <i data-lucide="graduation-cap" class="text-white w-6 h-6"></i>
+                    </div>
+                    <span class="font-display font-bold text-xl tracking-tight text-slate-900">欧研 <span class="text-blue-600">AI</span></span>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#overview" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">留学国家</a>
+                    <a href="#timeline" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">申请时间线</a>
+                    <a href="#cases" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">成功案例</a>
+                    <a href="#planner" class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">开始规划</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-6 animate-fade-in">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                AI 驱动的留学规划
+            </div>
+            <h1 class="font-display text-5xl md:text-7xl font-extrabold text-slate-900 mb-6 tracking-tight animate-fade-in delay-100">
+                欧洲留学 <br/>
+                <span class="gradient-text">AI 规划师</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed animate-fade-in delay-200">
+                30秒内获取您的个性化法国、德国或西班牙留学计划。评估您的背景并发现最匹配的顶尖大学。
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in delay-300">
+                <a href="#planner" class="w-full sm:w-auto px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold text-lg hover:bg-slate-800 transition-all shadow-xl hover:-translate-y-1">
+                    开始评估
+                </a>
+                <a href="#overview" class="w-full sm:w-auto px-8 py-4 bg-white text-slate-900 border border-slate-200 rounded-2xl font-bold text-lg hover:bg-slate-50 transition-all shadow-sm">
+                    探索国家
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Country Overview -->
+    <section id="overview" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-3xl md:text-4xl font-bold text-slate-900 mb-4">选择您的目的地</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">探索欧洲最受欢迎的留学目的地的独特优势、顶尖大学和申请要求。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- France -->
+                <div class="group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-blue-200 transition-all hover:shadow-2xl hover:shadow-blue-100/50">
+                    <div class="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="landmark" class="text-white w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-slate-900 mb-4">法国</h3>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="text-blue-500 w-5 h-5 mt-0.5"></i>
+                            <div>
+                                <span class="block font-semibold text-slate-800">顶尖大学</span>
+                                <p class="text-sm text-slate-500">索邦大学、PSL大学、巴黎-萨克雷大学</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="book-open" class="text-blue-500 w-5 h-5 mt-0.5"></i>
+                            <div>
+                                <span class="block font-semibold text-slate-800">热门专业</span>
+                                <p class="text-sm text-slate-500">艺术、商业、时尚、哲学</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="banknote" class="text-blue-500 w-5 h-5 mt-0.5"></i>
+                            <div>
+                                <span class="block font-semibold text-slate-800">平均学费</span>
+                                <p class="text-sm text-slate-500">€2,770 - €3,770 (公立大学)</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="languages" class="text-blue-500 w-5 h-5 mt-0.5"></i>
+                            <div>
+                                <span class="block font-semibold text-slate-800">语言要求</span>
+                                <p class="text-sm text-slate-500">DELF/DALF (法语) 或 IELTS (英语)</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="pt-6 border-t border-slate-200">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">签证提示</p>
+                        <p class="text-sm text-slate-600 italic">大多数国际学生必须通过 Campus France 程序。</p>
+                    </div>
+                </div>
+
+                <!-- Germany -->
+                <div class="group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-emerald-200 transition-all hover:shadow-2xl hover:shadow-emerald-100/50">
+                    <div class="w-14 h-14 bg-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="settings" class="text-white w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-slate-900 mb-4">德国</h3>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="text-emerald-500 w-5 h-5 mt-0.5"></i>
+                            <div>
+                                <span class="block font-semibold text-slate-800">顶尖大学</span>
+                                <p class="text-sm text-slate-500">亚琛工业大学、慕尼黑工大、KIT</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="cpu" class="text-emerald-500 w-5 h-5 mt-0.5"></i>
+                            <div>
+                                <span class="block font-semibold text-slate-800">热门专业</span>
+                                <p class="text-sm text-slate-500">工程、计算机、汽车、物理</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="banknote" class="text-emerald-500 w-5 h-5 mt-0.5"></i>
+                            <div>
+                                <span class="block font-semibold text-slate-800">平均学费</span>
+                                <p class="text-sm text-slate-500">€0 - €1,500 (公立大学)</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="languages" class="text-emerald-500 w-5 h-5 mt-0.5"></i>
+                            <div>
+                                <span class="block font-semibold text-slate-800">语言要求</span>
+                                <p class="text-sm text-slate-500">TestDaF (德语) 或 IELTS (英语)</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="pt-6 border-t border-slate-200">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">签证提示</p>
+                        <p class="text-sm text-slate-600 italic">来自中国、越南和印度的学生需要 APS 审核证书。</p>
+                    </div>
+                </div>
+
+                <!-- Spain -->
+                <div class="group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-orange-200 transition-all hover:shadow-2xl hover:shadow-orange-100/50">
+                    <div class="w-14 h-14 bg-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="sun" class="text-white w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-slate-900 mb-4">西班牙</h3>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="text-orange-500 w-5 h-5 mt-0.5"></i>
+                            <div>
+                                <span class="block font-semibold text-slate-800">顶尖大学</span>
+                                <p class="text-sm text-slate-500">巴塞罗那大学、巴塞罗那自治大学、马德里康普顿斯大学</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="briefcase" class="text-orange-500 w-5 h-5 mt-0.5"></i>
+                            <div>
+                                <span class="block font-semibold text-slate-800">热门专业</span>
+                                <p class="text-sm text-slate-500">商业、旅游、建筑、法律</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="banknote" class="text-orange-500 w-5 h-5 mt-0.5"></i>
+                            <div>
+                                <span class="block font-semibold text-slate-800">平均学费</span>
+                                <p class="text-sm text-slate-500">€800 - €3,500 (公立大学)</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="languages" class="text-orange-500 w-5 h-5 mt-0.5"></i>
+                            <div>
+                                <span class="block font-semibold text-slate-800">语言要求</span>
+                                <p class="text-sm text-slate-500">DELE (西班牙语) 或 IELTS (英语)</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="pt-6 border-t border-slate-200">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">签证提示</p>
+                        <p class="text-sm text-slate-600 italic">通常需要高中/大学学位的认证（Homologation）。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="py-20 bg-slate-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-3xl md:text-4xl font-bold text-slate-900 mb-4">留学申请时间线</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">欧洲留学分步路线图。时机决定一切。</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- France Timeline -->
+                <div class="glass-card rounded-3xl p-8 shadow-sm">
+                    <h3 class="font-display text-xl font-bold text-blue-600 mb-8 flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-5 h-5"></i> 法国路线图
+                    </h3>
+                    <div class="space-y-8">
+                        <div class="relative pl-8 timeline-item">
+                            <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-blue-600 timeline-dot"></div>
+                            <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">3月</span>
+                            <p class="font-semibold text-slate-900">选择大学</p>
+                            <p class="text-sm text-slate-500">研究课程和 Campus France 的要求。</p>
+                        </div>
+                        <div class="relative pl-8 timeline-item">
+                            <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-blue-600 timeline-dot"></div>
+                            <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">5月</span>
+                            <p class="font-semibold text-slate-900">语言准备</p>
+                            <p class="text-sm text-slate-500">参加 DELF/DALF 或 IELTS 考试。</p>
+                        </div>
+                        <div class="relative pl-8 timeline-item">
+                            <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-blue-600 timeline-dot"></div>
+                            <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">9月</span>
+                            <p class="font-semibold text-slate-900">准备材料</p>
+                            <p class="text-sm text-slate-500">成绩单、简历和动机信。</p>
+                        </div>
+                        <div class="relative pl-8 timeline-item">
+                            <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-blue-600 timeline-dot"></div>
+                            <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">1月</span>
+                            <p class="font-semibold text-slate-900">提交申请</p>
+                            <p class="text-sm text-slate-500">通过 Etudes en France 平台申请。</p>
+                        </div>
+                        <div class="relative pl-8 timeline-item">
+                            <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-blue-600 timeline-dot"></div>
+                            <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">7月</span>
+                            <p class="font-semibold text-slate-900">签证申请</p>
+                            <p class="text-sm text-slate-500">预约 VFS Global/领事馆面试。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Germany Timeline -->
+                <div class="glass-card rounded-3xl p-8 shadow-sm">
+                    <h3 class="font-display text-xl font-bold text-emerald-600 mb-8 flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-5 h-5"></i> 德国路线图
+                    </h3>
+                    <div class="space-y-8">
+                        <div class="relative pl-8 timeline-item">
+                            <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-emerald-600 timeline-dot"></div>
+                            <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest">阶段 1</span>
+                            <p class="font-semibold text-slate-900">APS 审核</p>
+                            <p class="text-sm text-slate-500">特定国家学生的强制性材料验证。</p>
+                        </div>
+                        <div class="relative pl-8 timeline-item">
+                            <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-emerald-600 timeline-dot"></div>
+                            <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest">阶段 2</span>
+                            <p class="font-semibold text-slate-900">语言考试</p>
+                            <p class="text-sm text-slate-500">德语 TestDaF/DSH 或英语 IELTS/TOEFL。</p>
+                        </div>
+                        <div class="relative pl-8 timeline-item">
+                            <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-emerald-600 timeline-dot"></div>
+                            <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest">阶段 3</span>
+                            <p class="font-semibold text-slate-900">Uni Assist</p>
+                            <p class="text-sm text-slate-500">提交材料进行初步评估。</p>
+                        </div>
+                        <div class="relative pl-8 timeline-item">
+                            <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-emerald-600 timeline-dot"></div>
+                            <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest">阶段 4</span>
+                            <p class="font-semibold text-slate-900">大学申请</p>
+                            <p class="text-sm text-slate-500">直接向所选大学提交申请。</p>
+                        </div>
+                        <div class="relative pl-8 timeline-item">
+                            <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-emerald-600 timeline-dot"></div>
+                            <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest">阶段 5</span>
+                            <p class="font-semibold text-slate-900">签证与入学</p>
+                            <p class="text-sm text-slate-500">开设自保金账户并申请学生签证。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spain Timeline -->
+                <div class="glass-card rounded-3xl p-8 shadow-sm">
+                    <h3 class="font-display text-xl font-bold text-orange-600 mb-8 flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-5 h-5"></i> 西班牙路线图
+                    </h3>
+                    <div class="space-y-8">
+                        <div class="relative pl-8 timeline-item">
+                            <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-orange-600 timeline-dot"></div>
+                            <span class="text-xs font-bold text-orange-600 uppercase tracking-widest">步骤 1</span>
+                            <p class="font-semibold text-slate-900">语言准备</p>
+                            <p class="text-sm text-slate-500">专注于 DELE 或大学特定的语言测试。</p>
+                        </div>
+                        <div class="relative pl-8 timeline-item">
+                            <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-orange-600 timeline-dot"></div>
+                            <span class="text-xs font-bold text-orange-600 uppercase tracking-widest">步骤 2</span>
+                            <p class="font-semibold text-slate-900">大学选择</p>
+                            <p class="text-sm text-slate-500">确定公立与私立大学的要求。</p>
+                        </div>
+                        <div class="relative pl-8 timeline-item">
+                            <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-orange-600 timeline-dot"></div>
+                            <span class="text-xs font-bold text-orange-600 uppercase tracking-widest">步骤 3</span>
+                            <p class="font-semibold text-slate-900">申请窗口</p>
+                            <p class="text-sm text-slate-500">通常在3月至6月之间进行秋季入学申请。</p>
+                        </div>
+                        <div class="relative pl-8 timeline-item">
+                            <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-orange-600 timeline-dot"></div>
+                            <span class="text-xs font-bold text-orange-600 uppercase tracking-widest">步骤 4</span>
+                            <p class="font-semibold text-slate-900">录取与认证</p>
+                            <p class="text-sm text-slate-500">收到录取通知并开始学位认证流程。</p>
+                        </div>
+                        <div class="relative pl-8 timeline-item">
+                            <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-orange-600 timeline-dot"></div>
+                            <span class="text-xs font-bold text-orange-600 uppercase tracking-widest">步骤 5</span>
+                            <p class="font-semibold text-slate-900">签证与抵达</p>
+                            <p class="text-sm text-slate-500">申请 NIE/TIE 并在西班牙定居。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section id="cases" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-3xl md:text-4xl font-bold text-slate-900 mb-4">真实成功案例</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">看看不同背景的学生是如何实现他们的欧洲留学梦想的。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Case 1 -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-blue-100 rounded-bl-full -mr-12 -mt-12 transition-all group-hover:w-32 group-hover:h-32"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">1</div>
+                            <span class="font-bold text-slate-900">案例分析：艺术与商业</span>
+                        </div>
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">背景</p>
+                                <p class="text-slate-700 font-medium">重点大学，GPA 82，IELTS 6.5</p>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">结果</p>
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-100 text-emerald-700 font-bold text-sm">
+                                    <i data-lucide="award" class="w-4 h-4"></i> 已录取
+                                </div>
+                                <p class="mt-2 text-slate-900 font-bold">巴塞罗那大学</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-500 italic">“关键在于专注于我的作品集和尽早申请。”</p>
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-100 rounded-bl-full -mr-12 -mt-12 transition-all group-hover:w-32 group-hover:h-32"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold">2</div>
+                            <span class="font-bold text-slate-900">案例分析：工程学</span>
+                        </div>
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">背景</p>
+                                <p class="text-slate-700 font-medium">机械工程，GPA 85，IELTS 7.0</p>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">结果</p>
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-100 text-emerald-700 font-bold text-sm">
+                                    <i data-lucide="award" class="w-4 h-4"></i> 已录取
+                                </div>
+                                <p class="mt-2 text-slate-900 font-bold">亚琛工业大学</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-500 italic">“德国非常看重技术背景和扎实的 GPA。”</p>
+                    </div>
+                </div>
+
+                <!-- Case 3 -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-purple-100 rounded-bl-full -mr-12 -mt-12 transition-all group-hover:w-32 group-hover:h-32"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center text-white font-bold">3</div>
+                            <span class="font-bold text-slate-900">案例分析：人文科学</span>
+                        </div>
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">背景</p>
+                                <p class="text-slate-700 font-medium">商科专业，GPA 80，IELTS 6.5</p>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">结果</p>
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-100 text-emerald-700 font-bold text-sm">
+                                    <i data-lucide="award" class="w-4 h-4"></i> 已录取
+                                </div>
+                                <p class="mt-2 text-slate-900 font-bold">索邦大学</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-500 italic">“法国的文化魅力和实惠的公立大学非常完美。”</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Evaluation Tool -->
+    <section id="planner" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-500 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-500 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-3xl md:text-5xl font-bold mb-4">AI 留学背景评估</h2>
+                <p class="text-slate-400">填写您的个人资料，获取全面的录取评估报告。</p>
+            </div>
+
+            <div class="bg-white/5 backdrop-blur-xl rounded-[2rem] p-8 md:p-12 border border-white/10 shadow-2xl">
+                <form id="evaluationForm" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Education Level -->
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-slate-300 uppercase tracking-wider">教育背景</label>
+                        <select id="eduLevel" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                            <option value="985">顶尖大学 (985/双一流)</option>
+                            <option value="211">重点大学 (211)</option>
+                            <option value="bachelor">普通本科</option>
+                            <option value="junior">专科/高职</option>
+                        </select>
+                    </div>
+
+                    <!-- GPA -->
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-slate-300 uppercase tracking-wider">GPA (百分制)</label>
+                        <input type="number" id="gpa" placeholder="例如：85" min="0" max="100" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                    </div>
+
+                    <!-- Language Score -->
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-slate-300 uppercase tracking-wider">语言成绩</label>
+                        <select id="langScore" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                            <option value="7">雅思 7.0+</option>
+                            <option value="6.5">雅思 6.5</option>
+                            <option value="6">雅思 6.0</option>
+                            <option value="0">暂无语言成绩</option>
+                        </select>
+                    </div>
+
+                    <!-- Major -->
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-slate-300 uppercase tracking-wider">意向专业</label>
+                        <select id="major" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                            <option value="Business">商科与管理</option>
+                            <option value="Engineering">工程学</option>
+                            <option value="CS">计算机科学</option>
+                            <option value="Arts">艺术与人文</option>
+                        </select>
+                    </div>
+
+                    <!-- Budget -->
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-slate-300 uppercase tracking-wider">年度预算</label>
+                        <select id="budget" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                            <option value="low">低 (5k - 10k 欧元)</option>
+                            <option value="medium">中 (10k - 20k 欧元)</option>
+                            <option value="high">高 (20k 欧元以上)</option>
+                        </select>
+                    </div>
+
+                    <!-- Target Country -->
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-slate-300 uppercase tracking-wider">目标国家</label>
+                        <select id="targetCountry" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                            <option value="france">法国</option>
+                            <option value="germany">德国</option>
+                            <option value="spain">西班牙</option>
+                            <option value="not_sure">不确定 (AI 推荐)</option>
+                        </select>
+                    </div>
+
+                    <div class="md:col-span-2 pt-4">
+                        <button type="button" onclick="generateReport()" class="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold text-xl transition-all shadow-xl shadow-blue-900/20 flex items-center justify-center gap-2">
+                            <i data-lucide="sparkles" class="w-6 h-6"></i> 生成 AI 评估报告
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Result Modal -->
+    <div id="resultModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm">
+        <div class="bg-white w-full max-w-3xl rounded-[2.5rem] overflow-hidden shadow-2xl animate-fade-in relative">
+            <button onclick="closeModal()" class="absolute top-6 right-6 p-2 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 transition-all">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <div class="p-8 md:p-12">
+                <div class="flex flex-col md:flex-row items-center gap-8 mb-10">
+                    <div class="relative">
+                        <svg class="w-32 h-32 transform -rotate-90">
+                            <circle cx="64" cy="64" r="58" stroke="currentColor" stroke-width="12" fill="transparent" class="text-slate-100" />
+                            <circle id="scoreCircle" cx="64" cy="64" r="58" stroke="currentColor" stroke-width="12" fill="transparent" stroke-dasharray="364.4" stroke-dashoffset="364.4" class="text-blue-600 transition-all duration-1000 ease-out" />
+                        </svg>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center">
+                            <span id="scoreText" class="text-3xl font-black text-slate-900">0</span>
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">录取分</span>
+                        </div>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h3 class="font-display text-3xl font-bold text-slate-900 mb-2">评估结果</h3>
+                        <div id="chanceBadge" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-bold text-sm">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">推荐留学国家</p>
+                            <div class="flex items-center gap-3">
+                                <div id="countryIcon" class="w-10 h-10 rounded-xl flex items-center justify-center text-white">
+                                    <!-- Injected by JS -->
+                                </div>
+                                <span id="recommendedCountry" class="text-xl font-bold text-slate-900"></span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">最匹配大学</p>
+                            <ul id="universityList" class="space-y-3">
+                                <!-- Injected by JS -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 rounded-3xl p-6 border border-slate-100">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">个性化建议</p>
+                        <div id="adviceText" class="text-slate-600 text-sm leading-relaxed space-y-3">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 pt-8 border-t border-slate-100 flex flex-col sm:flex-row gap-4">
+                    <button onclick="downloadPlan()" class="flex-1 py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-slate-800 transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="download" class="w-5 h-5"></i> 下载留学计划
+                    </button>
+                    <button onclick="closeModal()" class="flex-1 py-4 bg-slate-100 text-slate-600 rounded-2xl font-bold hover:bg-slate-200 transition-all">
+                        关闭报告
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex items-center justify-center gap-2 mb-6">
+                <div class="bg-slate-900 p-1 rounded-lg">
+                    <i data-lucide="graduation-cap" class="text-white w-5 h-5"></i>
+                </div>
+                <span class="font-display font-bold text-lg tracking-tight text-slate-900">欧研 <span class="text-blue-600">AI</span></span>
+            </div>
+            <p class="text-slate-500 text-sm mb-8">利用数据驱动的洞察力，助力学生实现全球教育目标。</p>
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="#" class="text-slate-400 hover:text-blue-600 transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                <a href="#" class="text-slate-400 hover:text-blue-600 transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                <a href="#" class="text-slate-400 hover:text-blue-600 transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+            </div>
+            <p class="text-slate-400 text-xs">© 2026 欧研 AI 留学规划师。保留所有权利。</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Lucide Icons
+            lucide.createIcons();
+        });
+
+        // University Database
+        const universityDB = {
+            germany: [
+                { name: "慕尼黑工业大学 (TUM)", minGpa: 88, minLang: 7.0 },
+                { name: "亚琛工业大学 (RWTH Aachen)", minGpa: 85, minLang: 6.5 },
+                { name: "卡尔斯鲁厄理工学院 (KIT)", minGpa: 82, minLang: 6.5 },
+                { name: "达姆施塔特工业大学", minGpa: 80, minLang: 6.0 },
+                { name: "斯图加特大学", minGpa: 78, minLang: 6.0 }
+            ],
+            france: [
+                { name: "巴黎文理研究大学 (PSL)", minGpa: 88, minLang: 7.0 },
+                { name: "索邦大学", minGpa: 85, minLang: 6.5 },
+                { name: "巴黎-萨克雷大学", minGpa: 82, minLang: 6.5 },
+                { name: "格勒诺布尔-阿尔卑斯大学", minGpa: 78, minLang: 6.0 }
+            ],
+            spain: [
+                { name: "庞培法布拉大学", minGpa: 85, minLang: 7.0 },
+                { name: "巴塞罗那大学", minGpa: 82, minLang: 6.5 },
+                { name: "巴塞罗那自治大学", minGpa: 80, minLang: 6.5 },
+                { name: "马德里康普顿斯大学", minGpa: 75, minLang: 6.0 }
+            ]
+        };
+
+        let currentReport = null;
+
+        function generateReport() {
+            const edu = document.getElementById('eduLevel').value;
+            const gpaInput = document.getElementById('gpa');
+            const gpa = parseInt(gpaInput.value);
+            const lang = parseFloat(document.getElementById('langScore').value);
+            const major = document.getElementById('major').value;
+            const budget = document.getElementById('budget').value;
+            const target = document.getElementById('targetCountry').value;
+
+            if (isNaN(gpa) || gpa < 0 || gpa > 100) {
+                alert("请输入有效的 GPA（0 到 100 之间）。");
+                return;
+            }
+
+            // Scoring Logic
+            let score = 0;
+
+            // Education (30)
+            if (edu === '985') score += 30;
+            else if (edu === '211') score += 26;
+            else if (edu === 'bachelor') score += 22;
+            else if (edu === 'junior') score += 15;
+
+            // GPA (30)
+            if (gpa >= 90) score += 30;
+            else if (gpa >= 85) score += 26;
+            else if (gpa >= 80) score += 22;
+            else if (gpa >= 75) score += 18;
+            else score += 15;
+
+            // Language (20)
+            if (lang >= 7) score += 20;
+            else if (lang >= 6.5) score += 17;
+            else if (lang >= 6) score += 15;
+            else score += 8;
+
+            // Major Match (10) - Simplified
+            score += 10;
+
+            // Budget (10)
+            if (budget === 'high') score += 10;
+            else if (budget === 'medium') score += 8;
+            else score += 6;
+
+            // Determine Recommended Country
+            let recommendedCountry = target;
+            if (target === 'not_sure') {
+                if (major === 'Engineering' || major === 'CS') recommendedCountry = 'germany';
+                else if (major === 'Arts') recommendedCountry = 'france';
+                else recommendedCountry = 'spain';
+            }
+
+            // Filter Universities
+            const unis = universityDB[recommendedCountry]
+                .filter(u => gpa >= u.minGpa - 5 && lang >= u.minLang - 0.5)
+                .slice(0, 3);
+
+            // Chance Level
+            let chance = "";
+            let badgeClass = "";
+            if (score >= 90) { chance = "竞争力极强"; badgeClass = "bg-emerald-100 text-emerald-700"; }
+            else if (score >= 75) { chance = "竞争力强"; badgeClass = "bg-blue-100 text-blue-700"; }
+            else if (score >= 60) { chance = "竞争力中等"; badgeClass = "bg-orange-100 text-orange-700"; }
+            else { chance = "需提升背景"; badgeClass = "bg-rose-100 text-rose-700"; }
+
+            // Advice
+            let advice = [];
+            if (lang < 7) advice.push("争取更高的雅思成绩 (7.0+) 以解锁顶尖名校。");
+            if (gpa < 85) advice.push("关注最后一学期的成绩，以提高您的累计 GPA。");
+            if (recommendedCountry === 'germany') advice.push("立即开始您的 APS 审核流程，这可能需要 3-6 个月。");
+            if (recommendedCountry === 'france') advice.push("开始为 Campus France 准备您的作品集和动机信。");
+            advice.push("在第一轮（通常是 1 月至 3 月）提交申请，以获得最佳录取机会。");
+
+            currentReport = {
+                score,
+                chance,
+                recommendedCountry,
+                unis,
+                advice
+            };
+
+            displayResult(currentReport, badgeClass);
+        }
+
+        function displayResult(report, badgeClass) {
+            const modal = document.getElementById('resultModal');
+            const scoreText = document.getElementById('scoreText');
+            const scoreCircle = document.getElementById('scoreCircle');
+            const chanceBadge = document.getElementById('chanceBadge');
+            const countryName = document.getElementById('recommendedCountry');
+            const countryIcon = document.getElementById('countryIcon');
+            const uniList = document.getElementById('universityList');
+            const adviceDiv = document.getElementById('adviceText');
+
+            // Set Score
+            scoreText.innerText = report.score;
+            const offset = 364.4 - (364.4 * report.score) / 100;
+            scoreCircle.style.strokeDashoffset = offset;
+
+            // Set Badge
+            chanceBadge.className = `inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-bold text-sm ${badgeClass}`;
+            chanceBadge.innerHTML = `<i data-lucide="trending-up" class="w-4 h-4"></i> ${report.chance}`;
+
+            // Set Country
+            const countryMap = {
+                germany: { name: "德国", icon: "settings", color: "bg-emerald-600" },
+                france: { name: "法国", icon: "landmark", color: "bg-blue-600" },
+                spain: { name: "西班牙", icon: "sun", color: "bg-orange-600" }
+            };
+            const cData = countryMap[report.recommendedCountry];
+            countryName.innerText = cData.name;
+            countryIcon.className = `w-10 h-10 rounded-xl flex items-center justify-center text-white ${cData.color}`;
+            countryIcon.innerHTML = `<i data-lucide="${cData.icon}" class="w-6 h-6"></i>`;
+
+            // Set Universities
+            uniList.innerHTML = report.unis.map(u => `
+                <li class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-100">
+                    <i data-lucide="school" class="w-4 h-4 text-slate-400"></i>
+                    <span class="text-sm font-bold text-slate-800">${u.name}</span>
+                </li>
+            `).join('');
+
+            // Set Advice
+            adviceDiv.innerHTML = report.advice.map(a => `<p class="flex items-start gap-2"><i data-lucide="info" class="w-4 h-4 mt-0.5 text-blue-500 flex-shrink-0"></i> ${a}</p>`).join('');
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            lucide.createIcons();
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('resultModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function downloadPlan() {
+            if (!currentReport) return;
+
+            const content = `
+欧研 AI 留学规划师 - 个性化报告
+-------------------------------------------
+录取评估分: ${currentReport.score}/100
+竞争力水平: ${currentReport.chance}
+
+推荐留学目的地: ${currentReport.recommendedCountry === 'germany' ? '德国' : currentReport.recommendedCountry === 'france' ? '法国' : '西班牙'}
+
+顶尖大学匹配:
+${currentReport.unis.map(u => `- ${u.name}`).join('\n')}
+
+专家建议:
+${currentReport.advice.map(a => `• ${a}`).join('\n')}
+
+报告生成日期: ${new Date().toLocaleDateString()}
+            `;
+
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = '我的欧洲留学规划.txt';
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            const modal = document.getElementById('resultModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
